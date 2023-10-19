@@ -118,9 +118,12 @@ h3{
     justify-content: center;
     align-items: center;
 }
-
+.modal-image {
+    text-align: center;
+}
 .modal-image img{
-    height: 100%;
+    width: 30%;
+    margin-top: 10px;
     object-fit: contain;
 
 }

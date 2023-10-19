@@ -17,7 +17,9 @@ const showCards = async (val) => {
   const res = await fetch(`https://swapi.dev/api/${val}`);
   const data = await res.json();
   console.log(data.results);
+  
   data.results.forEach((result) => {
+    
     const newDiv = document.createElement("div");
     newDiv.classList.add("card");
 
@@ -54,9 +56,11 @@ const showCards = async (val) => {
       <h3>Director</h3> : ${result.producer}
       <h3>Release date</h3> : ${result.release_date}
       </p>
-      
+      <div class = "modal-image">
+      <img src="assets/films/${result.title}.png" alt="">
+      </div>
     </div>`;
-
+    
           break;
         case "people":
           modal.innerHTML = `<div class="modal-close">
@@ -82,6 +86,9 @@ const showCards = async (val) => {
           <h3>Weight</h3> : ${result.mass} kg
           <h3>Hair Color</h3> : ${result.hair_color}
           </p>
+          <div class = "modal-image">
+      <img src="assets/people/${result.name}.png" alt="">
+      </div>
         </div>`;
 
           break;
