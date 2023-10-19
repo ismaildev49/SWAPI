@@ -7,12 +7,16 @@
 }
 body{
     background-color: #CCCCCC;
+    
 }
 .container{
     max-width: 1000px;
     margin: 0 auto;
     background-color: #FFFFFF;
     min-height: 100vh;
+}
+img{
+    width: 100%;
 }
 .choices-container{
     display: flex;
@@ -40,8 +44,9 @@ body{
 .cards{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 200px 200px 200px 200px;
+    grid-template-rows: repeat(4, 1fr);
     padding-top: 40px;
+    min-height: 100% ;
 }
 .card {
     background-color: #FFFFFF;
@@ -63,3 +68,59 @@ body{
     color: #FFFFFF;
     border: 1px solid #00CC66;
   }
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 400px ;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    padding: 20px;
+    display: none;
+}
+.modal .modal-close {
+    position: absolute;
+    top: 8px ;
+    right: 8px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.modal-close svg{
+    width: 20px;
+    height: 20px;
+}
+.modal-close:hover{
+    transform: rotate(360deg);
+}
+.open{
+    display: block;
+}
+h3{
+    display: inline;
+}
+.modal-txt{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-image img{
+    height: 100%;
+    object-fit: contain;
+
+}
